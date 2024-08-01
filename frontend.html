@@ -24,23 +24,53 @@
             display: block;
             margin-top: 10px;
         }
-        .container select, .container input {
+        .container input {
+            
+            color: #D9D9D9;
             width: 100%;
             padding: 8px;
             margin-top: 5px;
             border-radius: 5px;
-            border: 1px solid #ccc;
+            border: 1px solid #D9D9D9;
         }
         .container button {
             width: 100%;
             padding: 10px;
             margin-top: 20px;
-            background-color: #28a745;
+            background-color: #34A853;
             color: white;
             border: none;
-            border-radius: 5px;
+            border-radius: 100px;
             cursor: pointer;
+            font-weight: bold;
         }
+        .name{
+            display: flex;
+            gap: 30px;
+            padding: 0px 10px;
+        }
+        .name input {
+            text-align: center;
+        }
+        #dob{
+           
+            display: flex;
+            flex-direction: row;
+            gap: 10px;
+           justify-content: center;
+        }
+        .birth select{
+            color: #D9D9D9;
+            padding: 8px;
+            margin-top: 5px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+        }
+        ::placeholder {
+  color: #D9D9D9;
+  opacity: 1; /* Firefox */
+}
+
     </style>
 </head>
 <body>
@@ -50,22 +80,22 @@
         </h1>
  
         <form id="registerForm">
-            <label for="firstName">الاسم الأول:</label>
-            <input type="text" id="firstName" name="firstName" required pattern="^[\u0621-\u064A]{3,30}$" title="الاسم يجب أن يكون بين 3 و 30 حرفًا باللغة العربية وبدون مسافات">
+            <div class="name">
+            <input type="text" id="firstName" name="firstName" placeholder="الاسم الاول " required pattern="^[\u0621-\u064A]{3,30}$" title="الاسم يجب أن يكون بين 3 و 30 حرفًا باللغة العربية وبدون مسافات">
 
-            <label for="lastName">اسم العائلة:</label>
-            <input type="text" id="lastName" name="lastName" required>
+            <input type="text" id="lastName" name="lastName" placeholder="اسم العائلة" required>
+  
+            </div>
+       
+            <input type="email" id="email" name="email" placeholder="البريد الإلكتروني:" required>
 
-            <label for="email">البريد الإلكتروني:</label>
-            <input type="email" id="email" name="email" required>
+            <input type="password" id="password" name="password" placeholder="كلمة السر" required>
 
-            <label for="password">كلمة المرور:</label>
-            <input type="password" id="password" name="password" required>
+            <input type="password" id="confirmPassword" name="confirmPassword" placeholder="تأكيد كلمة المرور:" required>
 
-            <label for="confirmPassword">تأكيد كلمة المرور:</label>
-            <input type="password" id="confirmPassword" name="confirmPassword" required>
-
-            <label for="dob">تاريخ الميلاد:</label>
+            
+            <label for="dob" style="color: #D9D9D9;">تاريخ الميلاد:</label>
+            <div class="birth">
             <div id="dob">
                 <select id="day" name="day" required>
                     <option value="">اليوم</option>
@@ -102,8 +132,12 @@
                     </script>
                 </select>
             </div>
+        </div>
 
-            <button type="submit">تسجيل</button>
+            <button type="submit">
+                إنشاء حساب في المنصة
+            </button>
+    
         </form>
     </div>
 
